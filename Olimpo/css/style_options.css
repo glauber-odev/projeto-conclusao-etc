@@ -1,0 +1,29 @@
+body{
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+article{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.7;
+}
+article:hover{
+    opacity: 1;
+    border: 3px solid #d36833;
+}
+
+.alinhamento{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:70px;
+}
