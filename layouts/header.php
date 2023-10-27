@@ -22,7 +22,7 @@
 
     <header class="main_header">
         <div class="main_header_content">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logos/logo_borda.png" alt="Olimpo Training" title="Olimpo Training"></a>
             <h4>Olimpo Training</h4>
 
