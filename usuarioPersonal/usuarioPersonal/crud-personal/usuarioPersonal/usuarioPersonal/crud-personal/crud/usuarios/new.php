@@ -9,6 +9,20 @@
 </head>
 <body>
   <main class="container">
+  
+  <header class="main_header">
+        <div class="main_header_content">
+            <a href="index.php">
+                <img src="assets/img/logos/logo_borda.png" alt="Olimpo Training" title="Olimpo Training"></a>
+            <h4>Olimpo Training</h4>
+
+            <nav class="main_header_content_menu">
+                <ul>
+                    <li><a href="views/index.php">Voltar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <h1>Cadastro</h1>
     <form action="usuarioadd.php" method="post">
