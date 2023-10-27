@@ -221,10 +221,10 @@ https://i.pinimg.com/originals/1e/e2/fb/1ee2fb9717554a1dbb09b924f19f8e72.png */
 <body>
 
   <div id='body_container'>
-    <!-- <img src='http://localhost/site_etc/teste/fichaDeTreino/genPDF/img/background_claro.jpg' id='backgroundFicha' width='1300px' height='100%'> -->
-    <!-- <img src='http://localhost/site_etc/teste/fichaDeTreino/genPDF/img/nome_olimpo.png' id='nome_olimpo'> -->
-     <img src='http://localhost/Olimpo_Training/fichaDeTreino/genPDF/img/background_claro.jpg' id='backgroundFicha' width='1300px' height='100%'>
-     <img src='http://localhost/Olimpo_Training/fichaDeTreino/genPDF/img/nome_olimpo.png' id='nome_olimpo'>
+     <img src='http://localhost/site_etc/teste/fichaDeTreino/genPDF/img/background_claro.jpg' id='backgroundFicha' width='1300px' height='100%'> 
+     <img src='http://localhost/site_etc/teste/fichaDeTreino/genPDF/img/nome_olimpo.png' id='nome_olimpo'>
+     <!--<img src='http://localhost/Olimpo_Training/fichaDeTreino/genPDF/img/background_claro.jpg' id='backgroundFicha' width='1300px' height='100%'>  -->
+     <!-- <img src='http://localhost/Olimpo_Training/fichaDeTreino/genPDF/img/nome_olimpo.png' id='nome_olimpo'> -->
     <div class='fichaFundo'>
       <div class='ficha'>
         <div class='fichaCabecalho'>

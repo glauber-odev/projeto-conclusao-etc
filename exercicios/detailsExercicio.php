@@ -26,6 +26,8 @@ $exercicio = $stmt->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?=$exercicio['nome']?> </title>
 </head>
+<a href="index.php" alt="voltar"><img height="60px" src="../views/assets/img/voltar.svg"></a>
+
 <h1 aling="center" ><?=$exercicio['nome']?></h1>
 
 <?php

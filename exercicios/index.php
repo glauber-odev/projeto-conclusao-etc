@@ -8,6 +8,49 @@
 <style>
     /* INICIO DOBRA EXERCICIOS */
 
+    .showExercicios{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .wrapbtn{
+        box-sizing: border-box;
+        
+        
+        margin-bottom: 15px;
+
+        padding: 12.2362px 36.7085px;
+        gap: 12.24px;
+        
+        width: 284.48px;
+        height: 67.3px;
+
+        background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+        
+        border: 1.22362px solid #F2F2F2;
+        backdrop-filter: blur(2.44724px);
+        
+        border-radius: 83.206px;
+        color: #68521b;
+        font-weight: 800;
+        font-size: 1.1rem;
+        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+        
+    }
+    
+    .wrapbtn a{
+        display: flex;
+        text-align: center;
+        font-family: 'Rubik';
+        text-decoration: none;
+        color: #68521b;
+        font-weight: 800;
+        font-size: 1.3rem;
+        
+    }
+
     .blocoExercicio {
         display: flex;
         flex-direction: column;
@@ -17,6 +60,8 @@
         border-radius: 5%;
         overflow: hidden;
         align-items: center;
+        box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+
     }
 
     .blocoExercicio_content_title {
@@ -77,8 +122,11 @@
 
 </style>
 <body>
-    
+    <div class="wrapbtn">
+        <a href="admPanelExercicios.php" class="btnCriar">Painel de administrador</a>
+    </div>    
 
+    <section class="showExercicios">
 <?php 
 
 //verificação pra ver se o usuario é admin
@@ -134,7 +182,7 @@ if(isset($_GET['msg'])){
 
     <br><br>
 <?php endforeach; ?>
-
+    </section>
 
 </body>
 </html>

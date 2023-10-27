@@ -77,7 +77,9 @@
 
 </style>
 <body>
-    
+
+
+<a href="index.php" alt="voltar"><img height="60px" src="../views/assets/img/voltar.svg"></a>
 
 <?php 
 

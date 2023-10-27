@@ -47,6 +47,52 @@ if(isset($_GET['acao'])) {
 <style>
     /* INICIO DOBRA EXERCICIOS */
 
+
+
+    
+    
+    .headerInfos{
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .headerInfos a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    h2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    .btIndex{
+        border: none;
+        width: 300px;
+        height: 50px;
+        padding: 5px 0px;
+        background-color: rgb(223,172,42);
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 3px;
+        
+    }
+
+    .showExercicios{
+        margin-bottom: 400px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
     .blocoExercicio {
         display: flex;
         flex-direction: column;
@@ -56,8 +102,13 @@ if(isset($_GET['acao'])) {
         border-radius: 5%;
         overflow: hidden;
         align-items: center;
+        color: #fff;
     }
 
+    .blocoExercicio_content {
+        text-align: center;
+    }
+    
     .blocoExercicio_content_title {
         display: flex;
         flex-direction: row;
@@ -100,6 +151,7 @@ if(isset($_GET['acao'])) {
         height: 28px;
         border-radius: 15%;
         background-color: rgb(44, 223, 44);
+        cursor: pointer;
     }
 
     /* FIM DOBRA EXERCICIOS */
@@ -129,10 +181,11 @@ if(isset($_GET['acao'])) {
     }
 
     #barra {
-        width: 80%;
+        width: 75%;
         height: 100%;
         flex-wrap: wrap;
         overflow: auto;
+        font-weight: bold;
 
     }
 
@@ -149,6 +202,7 @@ if(isset($_GET['acao'])) {
 
     .cabecalhoFicha {
         height: 100%;
+        width: 25%;
     }
 
     .wrapper_dados_ficha {
@@ -160,7 +214,7 @@ if(isset($_GET['acao'])) {
     }
 
     #observacoes {
-        width: 300px;
+        width: 100%;
         height: 130px;
     }
 
@@ -196,10 +250,20 @@ if(isset($_GET['acao'])) {
 </style>
 
 <body>
+
+    <header class="headerInfos">
+        <a href="usuarios.php?idUsuarios=2" target="_blank" >
+            <h2>Jefferson Romero</h2>
+        </a>
+
+        <a href="index.php?idUsuarios=2" class="btIndex" target="_blank">Visualizar fichas de treino deste usuário.</a>
+    </header>
+
+
     <!-- INICIO DOBRA EXERCICIOS -->
     <!-- INICIO BLOCO DE CÓDIGO IMUTÁVEL -->
-
-    
+    <main>
+    <div class="showExercicios">    
     <div class="blocoExercicio" id="1">
         <div class="blocoExercicio_content">
             <div class="blocoExercicio_content_title">
@@ -254,32 +318,40 @@ if(isset($_GET['acao'])) {
         <button onclick="addExercicio(this)" id="addExercicio">+</button>
     </div>
 
-    <div class="blocoExercicio" id="3">
-        <div class="blocoExercicio_content">
-            <div class="blocoExercicio_content_title">
-                <h1>Agachamento búlgaro</h1>
+    <!-- ############# EXRCICIOS FUNFANDO COM ESTRUTURA PHP ################### -->
+    <form action="" method="GET">
+        <div class="blocoExercicio" id="3">
+            <div class="blocoExercicio_content">
+                <div class="blocoExercicio_content_title">
+                    <h1>Agachamento búlgaro</h1>
+                    <input type="hidden" name="nome" value="Agachamento búlgaro"> 
+                    <input type="hidden" name="id" value="3">
+                    <input type="hidden" name="acao" value="addExercicio">
+                </div>
+                <a href="detalhesExercicio.php?id=1" target="_blank">
+                <img src="https://i.pinimg.com/originals/cf/69/7a/cf697a042d827afe23090ad23af1c181.gif">
+                </a>
+                <br>
             </div>
-            <a href="detalhesExercicio.php?id=1" target="_blank">
-            <img src="https://i.pinimg.com/originals/cf/69/7a/cf697a042d827afe23090ad23af1c181.gif">
-            </a>
-            <br>
+            <div class="blocoExercicio_form">
+                Modo:&nbsp;
+                
+                <input type="radio" name="modo" value="REPETICOES" checked="checked" class="radioRep" id="radioRep">Repeticoes
+                <input type="radio" name="modo" value="TEMPO">Tempo
+                <span class="blocoExercicio_form_seriesRep">
+                    Series<input type="number" id="series" name="series" value="3">&nbsp;
+                    Rep<input type="number" id="repeticoes" name="repeticoes" value="12">
+                </span>
+                <span class="blocoExercicio_form_intervaloCarga">
+                    Carga <input type="number" id="carga" name="carga" value="0">kg &nbsp;&nbsp;&nbsp;&nbsp;
+                    Intervalo <input type="number" id="intervaloSeries" name="intervaloSeries" value="30">s
+                </span>
+                <br>
+            </div>
+            <button type="submit" id="addExercicio">+</button>
         </div>
-        <div class="blocoExercicio_form">
-            Modo:&nbsp;
-            <input type="radio" name="modo" value="REPETICOES" checked="checked" class="radioRep" id="radioRep">Repeticoes
-            <input type="radio" name="modo" value="TEMPO">Tempo
-            <span class="blocoExercicio_form_seriesRep">
-                Series<input type="number" id="series" value="3">&nbsp;
-                Rep<input type="number" id="repeticoes" value="12">
-            </span>
-            <span class="blocoExercicio_form_intervaloCarga">
-                Carga <input type="number" id="carga" value="0">kg &nbsp;&nbsp;&nbsp;&nbsp;
-                Intervalo <input type="number" id="intervaloSeries" value="30">s
-            </span>
-            <br>
-        </div>
-        <button onclick="addExercicio(this)" id="addExercicio">+</button>
-    </div>
+    </form>
+    <!-- ############# EXRCICIOS FUNFANDO COM ESTRUTURA PHP ################### -->
 
     <?php for($i = 0; $i <= 5; $i++){?>
     <div class="blocoExercicio" id="1">
@@ -306,7 +378,6 @@ if(isset($_GET['acao'])) {
             </span>
             <br>
         </div>
-        <!-- talvez dar um href na função addex... ou no proprio botão passando todos os valores para a propria pagina, e recebendo por get e guardando numa variavel de sessão? -->
         <button onclick="addExercicio(this)" id="addExercicio">+</button>
         </div>
         <?php }; ?>
@@ -338,7 +409,7 @@ if(isset($_GET['acao'])) {
 
                         $i = 0;
 
-                        forEach($_SESSION['sessaoFicha'] as $dados){
+                        foreach($_SESSION['sessaoFicha'] as $dados){
 
             
                             echo "<table width='100%' >
@@ -355,7 +426,6 @@ if(isset($_GET['acao'])) {
                                         ";
                                         $i++;
                                     }
-                                    //<td width='10%'><a href='?acao=excluir?id=$i'><button>X".$dados['intervaloSeries']."</button></td>
                                     ?>
                     </div>
                 </div>
@@ -366,7 +436,6 @@ if(isset($_GET['acao'])) {
                             Intervalo entre exercícios <input type="number" name="intervaloExercicios" value="45">s<br>
                             Observações <textarea name="observacoes" id="observacoes"></textarea><br>
                             <input type="hidden" id="resultObs" name="resultObs">
-                            <input type="hidden" name="result" id="result">
                             <input type="submit" value="Enviar" id="Enviar">
                         </fieldset>
                     </div>
@@ -375,46 +444,12 @@ if(isset($_GET['acao'])) {
 
     </div>
     </div>
+    </main>
 
     <!-- FIM DOBRA DA BARRA DE DADOS DA FICHA -->
-<?php
- //limitador temporário
-// $_SESSION['sessaoFicha'] = [];
-?>
 </body>
 
 <script>
-    // dados de entrada
-    //idFicha, titulo da ficha, data criação(melhor pegar no php), observações, intervalo entre exercicios, idPersonal, idAluno
-
-    //idExercicio, series, repeticoes, intervalo entre series, carga, modo
-
-
-    //falta listar exercicios(com jquery), adicionar ao banco de dados  
-
-    let primExercicio = document.getElementById("1");
-
-    let exercicioUm = {
-        id: 1,
-        nome: "Flexao",
-        series: 3,
-        repeticoes: 30,
-        intervaloSeries: 45,
-        carga: 10,
-        modo: "TEMPO"
-    }
-
-
-    let ficha = [
-        exercicioUm
-    ]
-
-    // ficha.splice(3,1);
-
-
-
-    let btaddExercicio = document.getElementById("addExercicio");
-    let linkTeste = document.getElementById("linkTeste");
 
     function addExercicio(e) {
         let divPai = e.parentElement;
@@ -433,82 +468,13 @@ if(isset($_GET['acao'])) {
         let intervaloSeries = divForm.children[3].children[1].value;
         let carga = divForm.children[3].children[0].value;
 
-        dadosAdd = {
-            nome: nome,
-            id: parseInt(id),
-            series: parseInt(series),
-            repeticoes: parseInt(repeticoes),
-            intervaloSeries: parseInt(intervaloSeries),
-            carga: parseInt(carga),
-            modo: modo
-        }
-
-
-        ficha.push(
-            dadosAdd
-            // {
-            //     nome: nome,
-            //     id: parseInt(id),
-            //     series: parseInt(series),
-            //     repeticoes: parseInt(repeticoes),
-            //     intervaloSeries: parseInt(intervaloSeries),
-            //     carga: parseInt(carga),
-            //     modo: modo
-            // }
-        );
-
         window.location.href = `?acao=addExercicio&nome=${nome}&id=${id}&series=${series}&repeticoes=${repeticoes}&intervaloSeries=${intervaloSeries}&carga=${carga}&modo=${modo}`;
-        
 
-        atualizaFicha();
     }
-
-
-
-
-
-
-    let barra = document.getElementById("barra");
-    let barraExe = document.getElementById("barraExe");
-    let tabelaExe = document.getElementById("tabelaExe");
-    barra.style.backgroundColor = 'red';
-
-
-    let naldo;
-
-    function atualizaFicha() {
-        naldo = "";
-        for (let i = 0; i <= (ficha.length - 1); i++) {
-
-            naldo += `  <table width='100%' >
-                            <tr>
-                                <td width="50%">${ficha[i].nome}</td>
-                                <td width="10%">${ficha[i].series}</td>
-                                <td width="10%">${ficha[i].repeticoes}</td>
-                                <td width="10%">${ficha[i].carga}</td>
-                                <td width="10%">${ficha[i].intervaloSeries}</td>
-                            </tr>
-                        </table>
-                      `;
-        }
-
-        // colocar em uma tabela
-        // barraExe.innerHTML = naldo;
-    }
-
-
-    atualizaFicha();
-
-    function getResult() {
-        return JSON.stringify(ficha);
-    }
-
 
     document.getElementById('resultObs').value = document.getElementById('observacoes').value;
-    document.getElementById("result").value = getResult();
-
     document.getElementById('radioRep').checked = "checked";
-
+    
 </script>
 
 </html>
